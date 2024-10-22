@@ -9,4 +9,4 @@ python fwGenerator.py /storage/emulated/0/MT2/apks/arm64-v8a/libflutter.so
 
 ----
 
-[![Play on Youtube](https://img.youtube.com/vi/ETYDgKz4jBQ/3.jpg)](https://www.youtube.com/watch?v=ETYDgKz4jBQ)
+[![Play on Youtube](https://img.youtube.com/vi/oT6yT8LP1yY/3.jpg)](https://www.youtube.com/watch?v=oT6yT8LP1yY)
