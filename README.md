@@ -1,7 +1,3 @@
-# FlutterGenerator
-```
-
-```
 # Installation
 
 1. Download and install the PY (fwGenerator.py) from [GitHub Releases](https://github.com/FlutterGenerator/FlutterGenerator/releases)
