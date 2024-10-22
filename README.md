@@ -1,4 +1,4 @@
-# Installation
+# FlutterGeneratir Installation
 
 1. Download and install the PY (fwGenerator.py) from [GitHub Releases](https://github.com/FlutterGenerator/FlutterGenerator/releases)
 2. Download Termux and run fwGenerator.py and copy the file and upload it to your Gihab with the name.
