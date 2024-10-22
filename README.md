@@ -1,6 +1,6 @@
 # FlutterGenerator
 ```
-python fwGenerator.py /storage/emulated/0/MT2/apks/arm64-v8a/libflutter.so
+
 ```
 # Installation
 
@@ -9,5 +9,11 @@ python fwGenerator.py /storage/emulated/0/MT2/apks/arm64-v8a/libflutter.so
 ```
 .github/workflows
 ```
+# Commands on Thermux
+termux-setup-storage
+apt update
+apt upgrade
+pkg install python -y
+python fwGenerator.py /storage/emulated/0/MT2/apks/arm64-v8a/libflutter.so
 # Tutorial Video
 [![Play on Youtube](https://img.youtube.com/vi/oT6yT8LP1yY/0.jpg)](https://www.youtube.com/watch?v=oT6yT8LP1yY)
