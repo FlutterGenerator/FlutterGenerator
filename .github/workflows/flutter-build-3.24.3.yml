@@ -26,7 +26,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: ${ env.FLUTTER_VERSION }
+          flutter-version: '3.24.3'
 
       - name: Print Flutter version
         run: flutter --version
