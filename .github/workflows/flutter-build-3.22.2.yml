@@ -17,6 +17,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
@@ -25,13 +31,13 @@ jobs:
       - name: Print Flutter version
         run: flutter --version
 
-      - name: Create Flutter project
+      - name: Create and set up Flutter project
         run: |
           flutter create flutter_so
           cd flutter_so
           flutter pub get
 
-      - name: Build apk for arm64 and armeabi-v7a
+      - name: Build APK for arm64 and armeabi-v7a
         run: |
           cd flutter_so
           flutter build apk --release --target-platform android-arm,android-arm64
@@ -47,4 +53,3 @@ jobs:
         with:
           name: libflutter_so_armeabi_v7a
           path: flutter_so/build/app/intermediates/merged_native_libs/release/out/lib/armeabi-v7a/libflutter.so
-          
