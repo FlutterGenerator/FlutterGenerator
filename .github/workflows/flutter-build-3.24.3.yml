@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -37,10 +37,10 @@ jobs:
           cd flutter_so
           flutter pub get
 
-      - name: Build APK for arm64, armeabi, armeabi-v7a, x86, and x86_64
+      - name: Build APK for arm64 and armeabi-v7a
         run: |
           cd flutter_so
-          flutter build apk --release --target-platform android-arm,android-arm64,android-x86,android-x64
+          flutter build apk --release --target-platform android-arm,android-arm64
 
       - name: Upload libflutter.so for arm64
         uses: actions/upload-artifact@v4
@@ -48,26 +48,8 @@ jobs:
           name: libflutter_so_arm64
           path: flutter_so/build/app/intermediates/merged_native_libs/release/out/lib/arm64-v8a/libflutter.so
 
-      - name: Upload libflutter.so for armeabi
-        uses: actions/upload-artifact@v4
-        with:
-          name: libflutter_so_armeabi
-          path: flutter_so/build/app/intermediates/merged_native_libs/release/out/lib/armeabi/libflutter.so
-
       - name: Upload libflutter.so for armeabi-v7a
         uses: actions/upload-artifact@v4
         with:
           name: libflutter_so_armeabi_v7a
           path: flutter_so/build/app/intermediates/merged_native_libs/release/out/lib/armeabi-v7a/libflutter.so
-
-      - name: Upload libflutter.so for x86
-        uses: actions/upload-artifact@v4
-        with:
-          name: libflutter_so_x86
-          path: flutter_so/build/app/intermediates/merged_native_libs/release/out/lib/x86/libflutter.so
-
-      - name: Upload libflutter.so for x86_64
-        uses: actions/upload-artifact@v4
-        with:
-          name: libflutter_so_x86_64
-          path: flutter_so/build/app/intermediates/merged_native_libs/release/out/lib/x86_64/libflutter.so
