@@ -5,7 +5,7 @@
 ```
 .github/workflows
 ```
-# Commands on Thermux
+# Commands on Termux
 ```
 termux-setup-storage
 apt update
