@@ -30,7 +30,6 @@ jobs:
       - name: Print Flutter version
         run: flutter --version
 
-      # Если проект уже существует в репозитории, этот шаг можно пропустить
       - name: Install dependencies
         run: flutter pub get
 
