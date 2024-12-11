@@ -1,4 +1,3 @@
-
 name: Flutter Build
 
 on:
@@ -11,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -26,20 +25,25 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.3'
+          flutter-version: '3.24.3'  # Замените на вашу актуальную версию Flutter
 
       - name: Print Flutter version
         run: flutter --version
 
-      - name: Create and set up Flutter project
-        run: |
-          flutter create flutter_so
-          cd flutter_so
-          flutter pub get
+      # Если проект уже существует в репозитории, этот шаг можно пропустить
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Cache Flutter dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.pub-cache
+          key: ${{ runner.os }}-flutter-${{ hashFiles('**/pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-flutter-
 
       - name: Build APK for arm64 and armeabi-v7a
         run: |
-          cd flutter_so
           flutter build apk --release --target-platform android-arm,android-arm64
 
       - name: Upload libflutter.so for arm64
