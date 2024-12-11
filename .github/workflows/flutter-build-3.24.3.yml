@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest  # Используем Windows
 
     steps:
       - name: Checkout repository
@@ -30,7 +30,7 @@ jobs:
       - name: Print Flutter version
         run: flutter --version
 
-      # Создание проекта Flutter (если нет)
+      # Создание проекта Flutter
       - name: Create and set up Flutter project
         run: |
           flutter create flutter_so
