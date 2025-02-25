@@ -64,7 +64,7 @@ jobs:
 ```
 # MT Manager
 ```
-libflutter.so search (stable) and (beta)
+libflutter.so search (stable) and (beta) and (dev)
 version code
 ```
 # Archive|Flutter Version code
