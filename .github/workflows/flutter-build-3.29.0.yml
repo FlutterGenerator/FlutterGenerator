@@ -31,14 +31,16 @@ jobs:
       - name: Print Flutter version
         run: flutter --version
 
-      - name: Check project structure
+      - name: Debug project structure
         run: ls -la
 
       - name: Install dependencies
         run: flutter pub get
+        working-directory: flutter_so  # Укажите корректную папку
 
       - name: Build APK for arm64 and armeabi-v7a
         run: flutter build apk --release --target-platform android-arm,android-arm64
+        working-directory: flutter_so
 
       - name: Find libflutter.so
         run: find . -name "libflutter.so"
@@ -47,10 +49,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: libflutter_so_arm64
-          path: build/app/intermediates/stripped_native_libs/release/out/lib/arm64-v8a/libflutter.so
+          path: flutter_so/build/app/intermediates/stripped_native_libs/release/out/lib/arm64-v8a/libflutter.so
 
       - name: Upload libflutter.so for armeabi-v7a
         uses: actions/upload-artifact@v4
         with:
           name: libflutter_so_armeabi_v7a
-          path: build/app/intermediates/stripped_native_libs/release/out/lib/armeabi-v7a/libflutter.so
+          path: flutter_so/build/app/intermediates/stripped_native_libs/release/out/lib/armeabi-v7a/libflutter.so
