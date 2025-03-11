@@ -1,3 +1,4 @@
+
 name: Flutter Build
 
 on:
@@ -29,6 +30,9 @@ jobs:
 
       - name: Print Flutter version
         run: flutter --version
+
+      - name: Check project structure
+        run: ls -la
 
       - name: Install dependencies
         run: flutter pub get
