@@ -5,7 +5,7 @@
 ```
 .github/workflows
 ```
-# Flutter YML
+# Flutter YML Old
 ```
 name: Flutter Build
 
@@ -61,6 +61,61 @@ jobs:
         with:
           name: libflutter_so_armeabi_v7a
           path: flutter_so/build/app/intermediates/merged_native_libs/release/out/lib/armeabi-v7a/libflutter.so
+```
+# Flutter YML New 3.7.0
+```
+name: Flutter Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '{flutter_sdk_version}'
+
+      - name: Print Flutter version
+        run: flutter --version
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build APK for arm64 and armeabi-v7a
+        run: flutter build apk --release --target-platform android-arm,android-arm64
+
+      - name: Find libflutter.so
+        run: find . -name "libflutter.so"
+
+      - name: Upload libflutter.so for arm64
+        uses: actions/upload-artifact@v4
+        with:
+          name: libflutter_so_arm64
+          path: build/app/intermediates/stripped_native_libs/release/out/lib/arm64-v8a/libflutter.so
+
+      - name: Upload libflutter.so for armeabi-v7a
+        uses: actions/upload-artifact@v4
+        with:
+          name: libflutter_so_armeabi_v7a
+          path: build/app/intermediates/stripped_native_libs/release/out/lib/armeabi-v7a/libflutter.so
 ```
 # MT Manager
 ```
