@@ -96,14 +96,16 @@ jobs:
       - name: Print Flutter version
         run: flutter --version
 
-      - name: Install dependencies
-        run: flutter pub get
+      - name: Create and set up Flutter project
+        run: |
+          flutter create flutter_so
+          cd flutter_so
+          flutter pub get
 
       - name: Build APK for arm64 and armeabi-v7a
-        run: flutter build apk --release --target-platform android-arm,android-arm64
-
-      - name: Find libflutter.so
-        run: find . -name "libflutter.so"
+        run: |
+          cd flutter_so
+          flutter build apk --release --target-platform android-arm,android-arm64
 
       - name: Upload libflutter.so for arm64
         uses: actions/upload-artifact@v4
