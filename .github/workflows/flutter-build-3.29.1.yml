@@ -16,23 +16,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Show current directory and files
-        run: |
-          pwd
-          ls -la
-
-      - name: Ensure correct working directory
-        run: |
-          if [ -f "pubspec.yaml" ]; then
-            echo "Found pubspec.yaml in root"
-          elif [ -d "flutter_project" ]; then
-            cd flutter_project
-            echo "Moved into flutter_project directory"
-          else
-            echo "Error: pubspec.yaml not found!"
-            exit 1
-          fi
-
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
@@ -47,28 +30,43 @@ jobs:
       - name: Print Flutter version
         run: flutter --version
 
+      - name: Debug project structure
+        run: ls -R
+
+      - name: Change to project directory
+        run: cd $GITHUB_WORKSPACE
+
+      - name: Verify pubspec.yaml exists
+        run: |
+          if [ ! -f "pubspec.yaml" ]; then
+            echo "Error: pubspec.yaml not found!"
+            exit 1
+          fi
+
       - name: Install dependencies
         run: flutter pub get
+
+      - name: Verify main.dart exists
+        run: |
+          if [ ! -f "lib/main.dart" ]; then
+            echo "Error: lib/main.dart not found!"
+            exit 1
+          fi
 
       - name: Build APK for arm64 and armeabi-v7a
         run: flutter build apk --release --target-platform android-arm,android-arm64
 
-      - name: Show build output structure
-        run: ls -R build/app/intermediates || true
-
       - name: Find libflutter.so
-        run: find build -name "libflutter.so" || true
+        run: find . -name "libflutter.so"
 
       - name: Upload libflutter.so for arm64
         uses: actions/upload-artifact@v4
         with:
           name: libflutter_so_arm64
-          path: build/app/intermediates/stripped_native_libs/release/out/lib/arm64-v8a/libflutter.so
-          if-no-files-found: error
+          path: build/app/intermediates/merged_native_libs/release/out/lib/arm64-v8a/libflutter.so
 
       - name: Upload libflutter.so for armeabi-v7a
         uses: actions/upload-artifact@v4
         with:
           name: libflutter_so_armeabi_v7a
-          path: build/app/intermediates/stripped_native_libs/release/out/lib/armeabi-v7a/libflutter.so
-          if-no-files-found: error
+          path: build/app/intermediates/merged_native_libs/release/out/lib/armeabi-v7a/libflutter.so
