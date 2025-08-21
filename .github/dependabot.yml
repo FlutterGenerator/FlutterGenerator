@@ -5,13 +5,21 @@
 
 version: 2
 enable-beta-ecosystems: true
-
 updates:
-  - package-ecosystem: "github-actions"
-    directory: "/.github/workflows" # Location of workflows
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
     commit-message:
-      prefix: "Changed"
+        # Prefix all commit messages with "Changed: "
+        prefix: "Changed"
     rebase-strategy: "disabled"
-    
+
+  - package-ecosystem: "github-actions"
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "daily"
+    commit-message:
+        # Prefix all commit messages with "Changed: "
+        prefix: "Changed"
+    rebase-strategy: "disabled"
