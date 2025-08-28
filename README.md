@@ -82,7 +82,7 @@ python fwGenerator.py /storage/emulated/0/MT2/apks/arm64-v8a/libflutter.so
 # Tutorial Video
 [![Play on Youtube](https://img.youtube.com/vi/oT6yT8LP1yY/0.jpg)](https://www.youtube.com/watch?v=oT6yT8LP1yY)
 
-# [Flutter-SO-Build-New](https://github.com/FlutterGenerator/Flutter-SO-Build)
+# [Flutter-SO-Build](https://github.com/FlutterGenerator/Flutter-SO-Build)
 
 # Info
 
