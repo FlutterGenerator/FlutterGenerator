@@ -82,8 +82,10 @@ python fwGenerator.py /storage/emulated/0/MT2/apks/arm64-v8a/libflutter.so
 # Tutorial Video
 [![Play on Youtube](https://img.youtube.com/vi/oT6yT8LP1yY/0.jpg)](https://www.youtube.com/watch?v=oT6yT8LP1yY)
 
-# [Flutter-SO-Build-Old](https://github.com/FlutterGenerator/Flutter-SO-Build-Old)
-old dart version 2.9.0 and 2.16.2
-
 # [Flutter-SO-Build-New](https://github.com/FlutterGenerator/Flutter-SO-Build)
-new dart version 2.17.0 and 3.9.0
+
+# Info
+
+**🚀 Dart Version: 𒁍 2.9.0 ➢ 3.9.0**
+
+**🚀 Flutter Version: 𒁍 1.20.0 ➢ 3.35.2**
