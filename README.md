@@ -88,4 +88,4 @@ python fwGenerator.py /storage/emulated/0/MT2/apks/arm64-v8a/libflutter.so
 
 **🚀 Dart Version: 𒁍 2.9.0 ➢ 3.9.2**
 
-**🚀 Flutter Version: 𒁍 1.20.0 ➢ 3.35.3**
+**🚀 Flutter Version: 𒁍 1.20.0 ➢ 3.35.4**
