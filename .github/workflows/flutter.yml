@@ -22,8 +22,8 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Set up Flutter
-        uses: FlutterGenerator/flutter-action@v2
+      - name: Set up Flutter by tojik_proof_93
+        uses: FlutterGenerator/flutter-action@v2.22.0
         with:
           flutter-version: '3.38.5'
 
