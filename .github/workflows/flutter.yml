@@ -44,11 +44,11 @@ jobs:
       - name: Upload libflutter.so for arm64
         uses: actions/upload-artifact@v6
         with:
-          name: libflutter_so_arm64
-          path: flutter_so/build/app/intermediates/stripped_native_libs/release/out/lib/arm64-v8a/libflutter.so
+          name: libflutter_so_arm64        
+          path: flutter_so/build/app/intermediates/runtime_library_classes/release/out/lib/arm64-v8a/libflutter.so
 
       - name: Upload libflutter.so for armeabi-v7a
         uses: actions/upload-artifact@v6
         with:
           name: libflutter_so_armeabi_v7a
-          path: flutter_so/build/app/intermediates/stripped_native_libs/release/out/lib/armeabi-v7a/libflutter.so
+          path: flutter_so/build/app/intermediates/runtime_library_classes/release/out/lib/armeabi-v7a/libflutter.so
