@@ -37,10 +37,10 @@ jobs:
           cd flutter_so
           flutter pub get
 
-      - name: Build APK for arm64 and armeabi-v7a
+      - name: Build APP for arm64 and armeabi-v7a
         run: |
           cd flutter_so
-          flutter build apk --release --target-platform android-arm,android-arm64
+          flutter build appbundle --release --target-platform android-arm,android-arm64
 
       - name: Upload libflutter.so for arm64
         uses: actions/upload-artifact@v6
