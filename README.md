@@ -33,7 +33,7 @@
 
 # FlutterGenerator Installation
 
-1. Download and install the PY (fwGenerator.py) from [GitHub Releases](https://github.com/FlutterGenerator/FlutterGenerator/releases)
+1. Download and install the PY (fwGenerator.py) from [GitHub Releases](https://gist.github.com/FlutterGenerator/7b65cb208155a30d43bfda55568843c7)
 2. Download Termux and run fwGenerator.py and copy the file and upload it to your Gihab with the name.
 ```
 .github/workflows
@@ -122,4 +122,5 @@ python fwGenerator.py /storage/emulated/0/MT2/apks/arm64-v8a/libflutter.so
 **🚀 Dart Version: 𒁍 2.7.0-dev.2.1 ➢ 3.11.0**
 
 **🚀 Flutter Version: 𒁍 v1.12.13+hotfix.5 ➢ 3.41.2**
+
 
