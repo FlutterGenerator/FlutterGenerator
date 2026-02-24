@@ -136,10 +136,10 @@ jobs:
           cd flutter_so
           flutter pub get
 
-      - name: Build APK for arm64 and armeabi-v7a
+      - name: Build APP for arm64 and armeabi-v7a
         run: |
           cd flutter_so
-          flutter build apk --release --target-platform android-arm,android-arm64
+          flutter build appbundle --release --target-platform android-arm,android-arm64
 
       - name: Upload libflutter.so for arm64
         uses: actions/upload-artifact@v6
@@ -180,6 +180,7 @@ python fwGenerator.py /storage/emulated/0/MT2/apks/arm64-v8a/libflutter.so
 **🚀 Dart Version: 𒁍 2.7.0-dev.2.1 ➢ 3.11.0**
 
 **🚀 Flutter Version: 𒁍 v1.12.13+hotfix.5 ➢ 3.41.2**
+
 
 
 
