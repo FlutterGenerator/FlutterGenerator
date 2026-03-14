@@ -34,7 +34,7 @@
 # FlutterGenerator Installation
 
 1. Download and install the PY (fwGeneratorOld.py) from [GitHub Releases](https://gist.github.com/7b65cb208155a30d43bfda55568843c7.git)
-3. Download Termux and run fwGenerator.py and copy the file and upload it to your Gihab with the name.
+2. Download Termux and run fwGenerator.py and copy the file and upload it to your GitHub with the name.
 ```
 .github/workflows
 ```
