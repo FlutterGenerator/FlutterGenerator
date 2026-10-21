@@ -1,5 +1,7 @@
 # FlutterGenerator Installation
 
+[![DevImpact Score](https://img.shields.io/badge/DevImpact_Score-57.0-blue?style=flat-square&logo=github)](https://devimpact.osamamabkhot.dev/user/FlutterGenerator)
+
 1. Download and install the PY (fwGeneratorOld.py) from [GitHub Releases](https://gist.github.com/7b65cb208155a30d43bfda55568843c7.git)
 2. Download Termux and run fwGenerator.py and copy the file and upload it to your GitHub with the name.
 ```
